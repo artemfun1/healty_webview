@@ -11,9 +11,13 @@ function App() {
  
   function handlerClick(){
     setCount(count => count + 1)
-    
+
     localStorage.setItem('local', count.toString())
 
+  }
+
+  function handlerClickClear(){
+    localStorage.clear()
   }
 
   return (
@@ -24,6 +28,9 @@ function App() {
         </button>
         <p>{count.toString()}</p>
         <h1>{LS}</h1>
+        <button onClick={handlerClickClear}>
+          clear
+        </button>
     
       </div>
  
