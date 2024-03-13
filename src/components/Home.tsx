@@ -12,9 +12,9 @@ function Home() {
 		isWelcomeRef.current = true;
 	}
 
-	function handlerClickClear() {
-		localStorage.clear();
-	}
+	// function handlerClickClear() {
+	// 	localStorage.clear();
+	// }
 
 	if (!isWelcomeRef.current) {
 		return <WelcomeTour setIsWelcomeTour={setIsWelcomeTour}></WelcomeTour>;
@@ -23,7 +23,7 @@ function Home() {
 	return (
 		<>
 			<TasksPage />
-			<button onClick={handlerClickClear}>clear</button>
+			{/* <button onClick={handlerClickClear}>clear</button> */}
 		</>
 	);
 }
