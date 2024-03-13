@@ -18,10 +18,10 @@ function App() {
 
   function handlerClickClear(){
     localStorage.clear()
+    setCount(0)
   }
 
   return (
-    
       <div className="card">
         <button onClick={handlerClick}>
           count is {count}
