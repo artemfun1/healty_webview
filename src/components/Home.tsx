@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
+import { TasksPage } from "./TasksPage";
 import { WelcomeTour } from "./WelcomeTour";
-import { TasksPage } from './TasksPage'
 
 function Home() {
 	const [, setIsWelcomeTour] = useState(false);
@@ -12,9 +12,9 @@ function Home() {
 		isWelcomeRef.current = true;
 	}
 
-	// function handlerClickClear() {
-	// 	localStorage.clear();
-	// }
+	function handlerClickClear() {
+		localStorage.clear();
+	}
 
 	if (!isWelcomeRef.current) {
 		return <WelcomeTour setIsWelcomeTour={setIsWelcomeTour}></WelcomeTour>;
@@ -22,8 +22,8 @@ function Home() {
 
 	return (
 		<>
-			<TasksPage/>
-			{/* <button onClick={handlerClickClear}>clear</button> */}
+			<TasksPage />
+			<button onClick={handlerClickClear}>clear</button>
 		</>
 	);
 }

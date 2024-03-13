@@ -1,28 +1,27 @@
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { getDate } from "../utils/getDate";
 
 type Props = {
 	name: string;
+	setCount(): void;
 };
 
-export const Task: FC<Props> = ({ name }) => {
+export const Task: FC<Props> = ({ name, setCount }) => {
 	const [, setIsDone] = useState(false);
 
 	const dateNow = getDate();
 	const isTodayRef = useRef(false);
 
 	const LSDateNow = localStorage.getItem(`${name}`);
-	if (LSDateNow) {
-		if (LSDateNow !== dateNow) {
-			isTodayRef.current = false;
-		} else {
-			isTodayRef.current = true;
-		}
+
+	if (LSDateNow === dateNow) {
+		isTodayRef.current = true;
 	}
 
-	console.log(LSDateNow);
-
 	function handlerClick() {
+		if (!isTodayRef.current) {
+			setCount();
+		}
 		setIsDone(true);
 		isTodayRef.current = true;
 		localStorage.setItem(`${name}`, `${dateNow}`);
@@ -65,6 +64,12 @@ export const Task: FC<Props> = ({ name }) => {
 			/>
 		</svg>
 	);
+
+	useEffect(() => {
+		if (isTodayRef.current) {
+			setCount();
+		}
+	}, [setCount]);
 
 	return (
 		<div onClick={handlerClick} className="task">

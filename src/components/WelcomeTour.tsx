@@ -34,7 +34,9 @@ export const WelcomeTour: FC<Props> = ({ setIsWelcomeTour }) => {
 				/>
 			</svg>
 
-			<p className="welcome-text">Complete tasks every day <br/> and get healthy</p>
+			<p className="welcome-text">
+				Complete tasks every day <br /> and get healthy
+			</p>
 			<p className="welcome-text">Tasks are updated every day</p>
 
 			<button className="welcome-button" onClick={handleClick}>

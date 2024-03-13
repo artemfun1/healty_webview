@@ -43,20 +43,27 @@
 	height: 100%;
 	width: 100%;
 }
+.taskPage-logo {
+	font-family: "Comfortaa", cursive;
+	font-weight: 400;
+	font-size: 4rem;
+	color: #7c5ef3;
+}
+
 .task {
 	background-color: #fff;
 	width: 80%;
 	height: 72px;
 	margin-top: 20px;
 	border-radius: 8px;
-	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.1);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 .task:active {
-	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.1);
 }
 
 .task-name {
